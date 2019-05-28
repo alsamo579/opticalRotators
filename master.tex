@@ -1,0 +1,425 @@
+% Use only LaTeX2e, calling the article.cls class and 12-point type.
+
+\documentclass[12pt]{article}
+
+% Users of the {thebibliography} environment or BibTeX should use the
+% scicite.sty package, downloadable from *Science* at
+% www.sciencemag.org/about/authors/prep/TeX_help/ .
+% This package should properly format in-text
+% reference calls and reference-list numbers.
+
+\usepackage{scicite}
+
+% Use times if you have the font installed; otherwise, comment out the
+% following line.
+
+\usepackage{times}
+\usepackage{graphicx}
+
+% The preamble here sets up a lot of new/revised commands and
+% environments.  It's annoying, but please do *not* try to strip these
+% out into a separate .sty file (which could lead to the loss of some
+% information when we convert the file to other formats).  Instead, keep
+% them in the preamble of your main LaTeX source file.
+
+
+% The following parameters seem to provide a reasonable page setup.
+
+\topmargin 0.0cm
+\oddsidemargin 0.2cm
+\textwidth 16cm 
+\textheight 21cm
+\footskip 1.0cm
+
+
+%The next command sets up an environment for the abstract to your paper.
+
+\newenvironment{sciabstract}{%
+\begin{quote} \bf}
+{\end{quote}}
+
+
+% If your reference list includes text notes as well as references,
+% include the following line; otherwise, comment it out.
+
+\renewcommand\refname{References and Notes}
+
+% The following lines set up an environment for the last note in the
+% reference list, which commonly includes acknowledgments of funding,
+% help, etc.  It's intended for users of BibTeX or the {thebibliography}
+% environment.  Users who are hand-coding their references at the end
+% using a list environment such as {enumerate} can simply add another
+% item at the end, and it will be numbered automatically.
+
+\newcounter{lastnote}
+\newenvironment{scilastnote}{%
+\setcounter{lastnote}{\value{enumiv}}%
+\addtocounter{lastnote}{+1}%
+\begin{list}%
+{\arabic{lastnote}.}
+{\setlength{\leftmargin}{.22in}}
+{\setlength{\labelsep}{.5em}}}
+{\end{list}}
+
+
+% Include your paper's title here
+
+\title{ Defocused optical rotation of birefrignent microparticles    } 
+
+
+% Place the author information here.  Please hand-code the contact
+% information and notecalls; do *not* use \footnote commands.  Let the
+% author contact information appear immediately below the author names
+% as shown.  We would also prefer that you don't change the type-size
+% settings shown here.
+
+\author
+{Alvin S. Modin,$^{1\ast}$ Matan Yah Ben Zion,$^{1}$ Melissa Ferrari,$^{1}$ \\ Mark D Hannel , $^{1}$ Paul M. Chaikin, $^{1}$\\
+\\
+\normalsize{$^{1}$Department of Physics, New York University,}\\
+\normalsize{726 Broadway, New York, NY 10003, USA}\\
+\\
+\normalsize{$^\ast$To whom correspondence should be addressed; E-mail:  alvin.modin@nyu.edu.}
+}
+
+% Include the date command, but leave its argument blank.
+
+\date{}
+
+
+
+%%%%%%%%%%%%%%%%% END OF PREAMBLE %%%%%%%%%%%%%%%%
+
+
+
+\begin{document} 
+
+% Double-space the manuscript.
+
+\baselineskip24pt
+
+% Make the title.
+
+\maketitle 
+
+
+
+% Place your abstract within the special {sciabstract} environment.
+
+\begin{sciabstract}
+Optical angular momentum can be transferred to a particle resulting in a torque that leads to the particle's rotation. In the past, optical tweezers have been used to rotate individual colloids, trapping them to the narrow waist of a focused laser. We show that a defocused, circularly-polarized beam can induce stable rotation in hundreds of colloidal micro-particles simultaneously. This is done by developing a process for synthesizing stable birefringent vaterite, capable of rotating for long periods of time while experiencing minimal tweezing forces. Altering the handedness and intensity of the laser source allows us to control the frequency and switch between clockwise or counterclockwise rotation. We discuss the optical and physical properties of the rotating particles.
+\end{sciabstract}
+
+
+
+% In setting up this template for *Science* papers, we've used both
+% the \section* command and the \paragraph* command for topical
+% divisions.  Which you use will of course depend on the type of paper
+% you're writing.  Review Articles tend to have displayed headings, for
+% which \section* is more appropriate; Research Articles, when they have
+% formal topical divisions at all, tend to signal them with bold text
+% that runs into the paragraph, for which \paragraph* is the right
+% choice.  Either way, use the asterisk (*) modifier, as shown, to
+% suppress numbering.
+
+\section*{Introduction}
+Rotating colloids exhibit remarkably diverse behavior reminiscent of the locomotion of waltzing algae (CITATION), and of gears that power a bacterium’s flagella (CITATION). When submersed in a fluid, the hydrodynamic forces between micro-rotators can exert attractive and repulsive interactions of varying range. As such, the directed manipulation of colloidal particles by external fields is of particular interest in the study of dynamic self-assembly, microrheology, and the development of new synthetic, steerable colloids (CITATIONS). 
+
+Traditionally, torques over particulate matter have been exerted by magnets (CITATIONS). When a magnetic colloid is introduced to a time-dependent magnetic field, it will realign so that its moment lies parallel to the field. Consequently, such particles undergo physical motion and experience viscous resistance when they are suspended in a liquid. Magnetic fields present unique advantages in that (a) the frequency and direction of the torque field set the angular velocity of the particle and (b) they are easy to integrate and model due to their unscreened nature in electrolyte solution. Yet, the homogeneity of a magnetic torque field restricts the rotation direction - particles can be rotated exclusively in one direction, either clockwise or counterclockwise.  The aim of this report is to introduce an alternative torque field capable of rotating hundreds of colloidal micro-particles.
+
+By harnessing the spin angular momentum of circularly polarized light, various laser configurations have succeeded in applying torques to optically trapped particles. Such optical micro-manipulation has been achieved using birefringent dielectric particles (CITATION), which are capable of inducing a phase retardation between the ordinary and extraordinary components of the beam. The result is a change in the angular momentum of the transmitted light, corresponding to a torque and subsequent rotation of the particle. Minimum thermal energy is gained by the experimental system due to the transparent nature of the birefrignent particle. This allow for experiments to be conducted at high powers, thereby achieving higher rotation rates (CITATION).
+
+At present, optical torque fields have exclusively rotated particles at the focal point of a highly converging beam. This converging beam geometry applies a strong radial, "tweezing" force (CITATION) that keeps the particle pivoting at a fixed point. As a result, the dynamics of the rotating particle are dictated by the beam, and do not reciprocate from the surroundings. Furthermore, the narrow waist of the focused beam limits the the number of particles that can be rotated to no more than a handful. 
+
+Here we report a tailored optical system capable of inducing stable rotation in hundreds of birefringent particles simultaneously. We demonstrate a protocol for synthesis of stable micro-vaterite particles that can rotate for long periods of times. Using a broad, defocused Gaussian beam, the particles experience a torque field with minimal trapping forces that would otherwise arise from gradients in the light intensity.The translational behavior of rotating particles in the presence of the beam is then analyzed. Altering the handedness and intensity of the laser source allows us to control the rotation frequency and switch between clockwise or counterclockwise rotation.  We characterize vaterite's optical and physical properties through experiment by measuring their transmittance and birefringence. With this information, we establish a dependence of rotation frequency on various parameters, such as particle size, energy flux and the viscous drag force acting on the particle. Our study offers a novel degree of freedom for rotational optical micro-manipulation that we believe can be combined in tandem with magnetic torque fields.
+
+\section*{Materials and Methods}
+\subsection*{Synthesis and stabilization of vaterite microspheres}
+We synthesize microvaterite particles via controlled precipitation of highly concentrated solutions of calcium chloride $CaCl_{2}$ and sodium carbonate $Na_{2}CO_{3}$ (cite, x,y,z). These solutions are buffered to a pH of 9-9.5 by N-Cyclohexyl-2-aminoethanesulfonic acid (CHES). Initially, equal volumes (5mL) of 0.33 M $Na_{2}CO_{3}$ and $CaCl_2$ are mixed in a glass vial containing a 1cm magnetic stir-bar, rotating at $\approx 950rpm$ Fig. 2(a,1). This sample is referred to as the synthesis bath. Under these conditions, a typical yield results in a cloudy mixture with  thousands of particles with a mean size of 3.6 um $\pm$ 0.8 um (Fig.2(b)). By varying the stirring speed, initial reactant concentration, and reaction time the final diameter of the synthesis bath can be  (volodkin et. al). In this way, we are capable of synthesizing particles ranging from 2-12$\mu m$ in diameter.
+
+A major barrier encountered when resuspending vaterite microspheres in solvent is their sensitivity to pH. Vaterite is a metastable polymorph of calcium carbonate, preserving its phase exclusively in basic conditions. Deviations towards even weakly acidic conditions cause rapid dissolution and transformation of vaterite spheres to calcite cubes (citation). So that we could promote phase stability, limit flocculutation, and preserve vaterite's optomechanical behavior, we choose to coat particles first with (3- Aminopropyl)trimethoxysilane (APS) and tetraethyl orthosilicate (TEOS) Fig. 2(a,2). In a typical APS coating, 1.5mL of the synthesis bath is washed in DI H20 3 times, to which 70uL of APS (Aldrich), 25uL of Ammonia (25\% V/V in H20, Merck) and 940uL of ethanol (200 proof) are added. The sample is then placed in a shaker for 2.5 hours. For TEOS coatings, the procedure is identical, except the sample is allowed to shake for 5 hours (cite Vogel?). 
+
+Scanning electron microscopy (SEM) images at various points of the synthesis process show a polycrystalline amalgamation of nanocrystals combining to form a spheroidal microvaterite particle (Fig. 2(c). Previously, it has been shown that direction of the optical axis resulting from these nanocrystalline subunits is oriented in a hyperbolic distribution throughout the formed microvaterite crystal. This suggests that an effective optical anisotropy exists at the particle scale. (Parkin et al . 2009 optics express).
+\subsection*{Optical setup}
+Our instrument is designed to apply a uniform optical torque field via delivery of a collimated beam to the sample plane. A schematic diagram of the setup can be seen in Fig. 3(a). The experimental system consists of a 3mm infrared (IR) laser, $\lambda=1064$nm (IPG Photonics, $M^{2}=1$), propagating first through a half wave plate ($\lambda/2$) followed by two Galilean beam contractors. The two telescopes are capable of shrinking the beam by a factor of 30, while preserving the initial collimation of the laser source. Once the beam diameter has been reduced, the laser propagates through a polarizing beam splitter (PBS) cube where the S-component of light is reflected upwards. The handedness of the linearly polarized light can be altered via a quarter wave plate ($\lambda/4$) fixed immediately after the PBS atop a precision manual rotation mount. 
+
+We are able to image the distribution of the incident near-infrared beam by making use of an infrared viewing card. The pixel intensities of the image are then fit to a Gaussian surface of revolution to obtain an intensity distribution of the beam flux at the sample plane. The flux $J$ can be written as 
+\begin{equation}
+J(\textbf{r})=\frac{I}{\pi\sigma^{2}}exp\bigg[-\frac{r^{2}}{\sigma}\bigg]\end{equation}
+where the pre-factor corresponds to the flux at the center of the beam and is obtained by integration of the 2-dimensional Gaussian over the area of the beam.
+Fig 3(b) shows the intensity distribution $I(r)$ with $\sigma$=235 $\mu m$. To compensate for any divergence that may result from minimizing the beam diameter, we use a 25.4 mm biconvex lens with a focal length of 15 cm. This compensating lens sits within a non-rotating zoom housing, which allows for fine tuning of the beam diameter. We are capable of adjusting the flux at the sample either by changing the size of the incoming beam, or modulating the power at the laser head. 
+
+To image our microspheres, we illuminate the sample using a 505 nm LED (Thorlabs). The light emitted by the LED passes through a N-BK7 ground glass diffuser (600 grit), and is then pseudo-collimated with an N-BK7 plano-convex lens (f=25.4mm) that acts as a primary collector lens. After a secondary achromatic doublet lens (f=76.2mm) forms an image of the filament at the position of a field diaphragm. A condenser lens is used to focus the light at the back focal plane of the objective. Once Köhler illumination is achieved, images of the focal plane are obtained using an infinity corrected Leica HCX PL APO 40x objective (NA=0.85). High-pass index matched IR filters mounted before the camera are used to prevent interference of IR light with the 3.1MP monochrome camera (Imaging Source). 
+
+
+\section*{Results and Discussion}
+
+\subsection*{Transmittance and birefringence of microvaterite spherulites }
+	The physical properties of vaterite are of particular interest since these characteristics govern the particle's interaction with incident light. Past studies (vogel, parkin, bormuth) have, to an extent, investigated the birefringence and reflectivity of vaterite microspheres. However,  specific synthesis conditions give rise to different structural and surface morphologies (brecevic). An understanding of how synthesis-specific  reactants influence microvaterite's transmittance and birefringence are crucial in quantifying the incoming photonic angular momentum's contribution to the rotational torque. 
+\subsubsection*{Quantifying birefringence}
+When light is incident on a birefringent uniaxial crystal of thickness $d$, it experiences
+a phase shift dependent the discrepancy between the refractive indices of the ordinary $n_{0}$ and
+extraordinary $n_{e}$ axes (Fig. 1(c)). For the most general case, an elliptically polarized beam 
+can be expressed in terms of its ellipticity 
+$\phi$ and components parallel and perpendicular to the optic axis of the birefringent medium.
+\begin{equation}
+E=E_{0}e^{i\omega t}[\cos\phi\cos\theta\hat{i}+i\sin\phi\sin\theta\hat{j}]
+\end{equation}
+
+
+Here $\omega$ is the angular frequency of the incoming wave. When
+transmitted through the material, the emerging field will experience
+a phase shift $kd\Delta n$. The transmitted field $E^{prime}$, 
+\begin{equation}
+E^{\prime}=E_{0}e^{i\omega t}[e^{ikdn_{e}}\cos\phi\cos\theta\hat{i}+ie^{ikdn_{0}}\sin\phi\sin\theta\hat{j}]
+\end{equation}
+
+Integration of the electric field and it's complex conjugate $\boldsymbol{E^{\prime*}}$
+over all spacial elements yields the angular momentum $J=[\epsilon/2i\omega]\int d^{3}r\boldsymbol{E^{\prime*}\boldsymbol{E^{\prime}}$.
+The subsequent change in angular momentum results in a torque per
+unit area, 
+\begin{equation}
+\tau=\frac{\epsilon}{2\omega}E_{0}^{2}\biggl[-\sin kd(n_{0}-n_{e})\cos2\phi\sin2\theta+[1-\cos kd(n_{0}-n_{e})]\sin2\phi\biggr]
+\end{equation}
+
+In this relation, the first term is the torque owing to the plane polarized component of the incident light. This force tends to align the optic axis of the crystal with the electric field. The second term is the torque resulting from the change in the transmitted light's polarization. This spinning torque is a result of the particle gaining angular momentum, as light passing through a medium is phase shifted by $kd\Deltan$.  For plane polarized light carrying no angular momentum, $\phi=0$ or $\pi/2$, the second term vanishes. Under assumption of a no-slip boundary, the torque on a steady-state spinning particle
+will be balanced by the viscous forces. In the case of a spherical particle,
+$\tau=8\pi\eta r^{3}$ $\Omega$, with $\Omega=2\pi f$, 
+\begin{equation}
+f(d,\phi)=A\sqrt{[1-\cos kd(n_{0}-n_{e})]^{2}\sin^{2}2\phi-\sin^{2}kd(n_{0}-n_{e})\cos^{2}2\phi}
+\end{equation}
+$$A=\frac{J\lambda}{16\pi^{2}c\eta d}$$
+
+Vaterite particles act like microscopic waveplates with positive birefringence $n_{e}>n_{0}$. As a consequence, their optic axis is always aligned
+perpendicular to the propogation axis of the incoming beam. In this way, a circularly polarized light beam will always experience the particle's optical anisotropy. In the most general case of eliptically polarized light incident on microvaterite , the particle will rotate  so long as the spinning torque is greater
+than the alignment torque. The maximum rotation frequency will occur
+for $\phi=\pi/4$, corresponding to incident circularly polarized light. Though $\Delta n$ for a single vaterite crystal is $\Delta n=0.1$, the optical properties of microvaterite particles may change due to their polycrystaline structure resulting from the aggregated nanocrystals during synthesis. The birefringence sets the optimal thickness $d$ for a particle to act as a half-wave plate,
+\begin{equation}
+d=\frac{\lambda}{2\Delta n}
+\end{equation}and is a direct indicator of how effective the particle is at altering incident  optical angular momentum.
+
+We experimentally establish deviations of $\Delta n$ by by measuring the rotation frequency as a function of the incident ellipticity of the beam $\phi.$ An example of the dependence of a $5.40 \mu m$ particle's rotational frequency as a function of $\phi$ is shown in Fig.4(b). As the angle of the quarter-wave plate changes, the polarization of the incident light is altered until a critical polarization $\phi_{onset}$ where the particle begins to rotate. The dependence of  $\phi_{onset}$ on $\Delta n$ is obtained by considering the case where the alignment torque in equation (3) is balanced by the spinning torque. This corresponds to a total torque of zero, and occurs when 
+\begin{equation}
+\phi_{onset}=\frac{\pm(2m+1)\pi\mp kd\Delta n}{4} , \text{  m=0,1,2,3...}
+\end{equation}. The dependence of $f$ on $\phi$ is measured for particles of sizes ranging from \textasciitilde 3-6$\mu m$ in size. Each set
+of measurements is then fitted by equation(4).The particle thickness $d=2R$ was acquired by analysis of a microscopic image. $d$ was held fixed; $A$ and $\Delta\chi=k(n_{0}-n_{e})$ were allowed to vary. $A$ was found
+to differ by at most $18\%$ from the predicted value, with the incident flux measured to be $J=111 MW/m^2$, and the viscosity of $D_{2}O$ $\eta=1.25mPa\cdot s$ at room temperature. We obtained $\phi_{onset}$ from the point where the solid black line crosses zero in Fig. 4(b). These values are plotted in Fig. 4(a), and fit by equation (5) for $\Delta n$. The point at which $\phi_{onset}=0$ corresponds to the case when a particle is the exact thickness of a half-wave plate. This is shown by the dashed line in the case for a single vaterite crystal where $\Delta n=0.1$.  From the best fit of equation (5), we compute $\Delta\bar{n}=0.050\pm 0.002$. This value is slightly smaller to that obtained in previous studies (Citation, parkin). The results indicate that a synthesized microvaterite particle acts as a perfect half-wave plate for a thickness of $d=10.64\pm 0.43 \mu m$.
+
+
+\subsubsection*{Measuring transmittance}
+	It is well known that a focused Gaussian beam can exert scattering and gradient forces on microparticles (Ashkin 1970 PRL). Indeed, the linear momentum carried by propagating laser light is strong enough to translate particles through a medium. The radiation pressure on a particle is dependent on whether the incident photon is reflected or absorbed. We extend these ideas to our apparatus as a means of quantifying the effective attenuation coefficient of vaterite. 
+	Unlike in Ashkin’s seminal experiment, our apparatus uses a wide, collimated laser with energy flux $J$. The electromagnetic field propagates through a 100 $\mu m$ thick capillary containing particles of radii $r$  suspended in $D_{2}O$ (Fig. 4(d). When light is incident on particles from below, the corresponding photon pressure exerts a force that opposes gravity. The momentum flux of the photons can be associated with the energy flux of the electromagnetic wave, such that the corresponding average force of a wave incident normally to the particle's surface is given by, 
+$$\langle F_{incident}\rangle=\frac{\alpha J\pi r^2}{c}.$$
+Here $c$ is the speed of light and $\alpha$ is the reflectivity.
+We observe that for certain ratios of $J$ and $r$ , the particles rise and travel through the thickness of the capillary. Since the $Re\ll1 $ for this system, the subsequent upward motion gives rise to Stokesian drag force $6\pi \eta rv$. Balancing the forces on the particle gives,  
+\begin{equation}
+\frac {\alpha J_{0} }{6c \eta}-\Delta \frac{2}{9}\frac{\rho r}{\eta} = \frac{v}{r}. 
+\end{equation}.
+By measuring the time it takes for a particle to rise $100 \mu m$, we extract the rise velocity $v$, which is then related to the reflectivity of vaterite.
+
+The dependence of $v/r$ on $r$  is plotted in Fig.4(c). For increasing particle size, we see that $v/r$ decreases, as expected.  Each point correspond to measured $v/r$ for a particle, with solid lines correspond to fits to equation (7). We define the slope $m$ as $$m=\Delta\rho\frac{2}{9}\frac{g}{\eta}$$
+For a vaterite particle suspended in $D_2O$, $\rho=2.64 g/cc$, $\eta=1.25mPa\cdot s$, the predicted value of $m=2.7 1/\mu m\cdot s$. A linear fit to the data shows good agreement to this expected value, with deviations of $<$ 15\%. Each set of measurements provides an the intercept $b$, that scales with the incident energy flux. $b$ provides us with a direct measure of $\alpha$. In particular,  
+$$ \alpha=\frac{6bc\eta}{J}$$
+
+Averaging over several fluxes, we find the corresponding value for $\alpha$ is 0.06. For a particle to rise with the same velocity, it must  absorb  $2\alpha$, or $12\%$ of the incoming light.  Given an absorption of $12\%$, we note that the temperature of the fluid surrounding
+the particle can be approximated to first order by 
+\[
+T_{s}=\frac{J_{abs}r}{4\kappa(T_{s})}
+\]
+ where the absorbed flux is $J_{abs}=2\alpha J_{incident}$, and $\kappa(T_{s})$
+is the thermal conductivity of heavy water (Le Nelndre et al ). For
+$J_{incident}=130 MW/m^{2}$, the surface temperature of a $r=2.5\mu m$
+particle rises according to the upperbound set by the thermal conductivity $\approx 0.6\text{}W/^{\circ}Cm$ . In the case of a $12\%$ absorption,
+the surface temperature of the particle is expected to rise by $67.5^{\circ}C$,
+and the surrounding fluid will begin to approach the boiling point.
+In experiments, we do not observe boiling for fluxes of $130MW/m^{2}$
+or higher. With this in mind, we conclude that absorption
+of IR light must be negligible; to achieve the same photon pressure
+microvaterite must reflect $6\%$ of all incident radiation. 
+
+Surprisingly, the reflectivity and dynamics of microvaterite can be accounted for by the laws of geometric optics. In particular, these laws are valid for particle's with size parameter $x=\text{2\ensuremath{\pi r/\lambda}\ensuremath{\gg1}}$, and the phase shift resulting from the refractive index difference
+$\rho=2x(n-n^{\prime})\gg1$. In this regime, rays hit the particle
+at various angles and undergo reflection, refraction and diffraction,
+before exiting with a change in amplitude and relative phases. Indeed,
+the Fresnel theory for a normally incident beam on a large sphere
+is in good agreement with the observed reflectivity (Van De Hulst,
+Sec. 12.4 Fig 39). 
+\subsection*{Rotational dynamics of birefringent vaterite particles}
+
+A vaterite particle's near-wall rotational diffusion plays a crucial role in governing its hydrodynamic mobility. We characterize and measure the rotational dynamics of vaterite particles by making use of depolarized light scattering. The rotational diffusion constants for particles ranging  2-4$\mu m$ in size are shown in Fig. 5(a). These measurements are obtained by depolarized light scattering. Fig. 5(b) depicts stills from a video obtained using a  analyzer/polarizer configuration. The scattered field intensity fluctuates as a particle undergoes translational and rotational diffusion under crossed-polarizers. From the intensity signal, the rotational diffusion constant can be extracted by determining the particle's characteristic rotational decorrelation time. We define the intensity correlation function under crossed polarization (PA) as
+\begin{equation}
+g_{PA}(q,\tau)=\langle E_{PA}^{*}(q,0)E_{PA}(q,\tau)\rangle/\langle|E_{PA}(q)|^{2}\rangle
+\end{equation}
+
+Following the theory in (), for random motion of non-interacting small particles with cylindrical optical symmetry in a viscous fluid, we can assume that the translational/rotational
+dynamics are uncoupled.  $g_{PA}$ is thus separable into 
+$$
+g_{PA}^{(1)}=f_{r}(\tau)f_{t}(q,\tau)
+$$
+ where 
+\begin{equation}
+f_{t(}(q,\tau)=\exp(-q^{2}D_{t}\tau)$$
+$$f_{r}(\tau)=\exp(-6D_{r}\tau)
+\end{equation}
+
+$f_{t}$ and $f_{r}$ are the dynamical correlation functions for rotational and translational motion. Because $f_{r}$  is independent of the scattering vector $\vec{q}$, the rotational diffusion  constant $D_{r}$ of a birefringent particle can be extracted by fitting $f_{r}$ to  $g_{PA}$. 
+
+Fig. 5(c) displays a typical intensity autocorrelation function. The resulting $f_{r}(\tau)$ is well fitted by equation (9), indicated by the red curve. From the fit, we obtain a value for 6$D_{r}$, with the resulting distribution plotted in Fig. 5(a) as a function or particle diameter. We find that our measurements are in good agreement for the dynamic rotational behavior of similar sized spheres diffusing in bulk. These theoretical diffusion constants, obtained via the Stokes-Einstein relation, are indicated by the solid curve.
+
+As vaterite's rotational drag coefficent behaves closely to a Stokesian
+sphere, we confirm equation (4) and model a particle's angular frequency by equating the viscous torque $8\pi\eta a^{3}\Omega$ with the optical torque $P/ck$. The optical torque is determined by the power $P$ of the incident photon, and the angular velocity is thus,
+\[
+\Omega=\frac{1}{8\pi\eta a^{3}}\frac{\sigma P}{ck}
+\]
+Here $\sigma=[1-\cos(4\pi\Delta na/\lambda$){]}, describes the change in polarization of light transmitted through the spherulite. The explicit dependence of the rotation frequency on parameters $a$, $J$ and $\lambda$ is 
+\begin{equation}
+f=\frac{J\lambda}{32\pi^{2}c\eta a}\bigg(1-\cos(\frac{4\pi\Delta na}{\lambda})\bigg)
+\end{equation}
+
+Experimentally, a linear dependence of $f$ on
+$J$ is observed across all particle sizes. We plot the measured rotation frequency for three different particles with sizes 2.45$\mu m$, 3.73$\mu m$ and
+4.81 $\mu m.$ in Fig. 5(d).  The frequency is computed by observing
+the rotation of a particle under cross-polarizers. In Fig. 5(f) a positive-uniaxial microparticle undergoes one counter-clockwise rotation, during which the polarized light illuminating the sample plane is depolarized periodically by the particle. Due to spherical symmetry, there are four depolarizations ("blinks")
+per $2\pi$ revolutions. These blinks occur when the linearly polarized light is not incident
+along the particle's ordinary or extraordinary optical
+axis. The rotation frequency is proportional to the number of blinks
+$N$ in time $t$,
+\begin{equation}
+f=\frac{N}{4t}
+\end{equation}
+The uncertainty in the rotation frequency is found by $\delta f=\sqrt{(\frac{1}{4t}\delta N)^{2}+(\frac{N}{4t^{2}}\delta t)^{2}}$.
+Solid lines in Fig. 5(d) correspond to expected frequencies for $\Delta n=0.1$. Dashed lines correspond to frequencies for the experimentally measured $\Delta n=0.05$. The measured rotation rates are in good agreement with the expected theoretical values. 
+
+Equation (6) predicts a complex relationship of the rotation frequency on particle size. This is in part due to a competition between the birefringence and viscous forces. The $\sim r^{3}$ dependence of the drag force means that microvaterite particles will tend to rotate slower as the particle size increases, while the sinusoidal optical torque competes with drag by modulating the phase shift of transmitted light with increasing radius. The combination of these two effects results in a non-monotonic behavior, which we observe in Fig. 5(e). The measured rotation frequency as a function of size is a fit to equation (6).
+
+From the data in Figs. 5(d-e),  we conclude that if faster rotation
+rates are required, then larger fluxes should be used. Alternatively, smaller particles may be beneficial, but only up to a point - an optimal thickness is required for the particle to act as a half-wave plate. Any deviations from this size begin to reduce the change in angular momentum that occurs as a result of the transmitted light being phase shifted by less than $\pi$. At a critical size, the rotation rate of larger particles starts to decrease due to larger drag forces. Ideal particles should have sizes in the $3-4\mu m$ range, for which we observe the maximum rotation frequency.
+
+\subsection*{Translational dynamics in the presence of energy flux}
+
+So that a particle's dynamics can reciprocate from the surrounding fluid,
+it is necessary to minimize any trapping forces that may result from gradients
+in the beam intensity. In the presence of no radial forces, the translational motion of a particle is expected to be Brownian. We analyze the dynamics of 
+vaterite as it rotates in light of varying $J$ (Supplementary movie).
+To quantify the average diffusive behavior the conventional approach
+is to compute the time-averaged mean squared displacement (MSD),
+\begin{equation}
+\langle r^{2}(\tau)\rangle=\frac{1}{T-\tau}\int_{0}^{T-\tau}(r_{i}(t+\tau)-r_{i}(t))^{2}dt
+\end{equation}
+where $\tau$ is the lag time and $T$ is the total measured time.
+We used the particle tracking Python library, trackpy, to obtain
+MSDs for single-particle trajectories with different $J$. Fig. 6(a) shows the individual particles' trajectories for different fluxes. The motion is largely Brownian, with the amplitude of diffusion appearing to grow with increasing $J$.  We plot the time-averaged MSD for several fluxes in Fig. 6(b). Each MSD is obtained by averaging the individual mean squared displacement over several particle sizes. For a typical diffusive process in 2-dimensions, $\langle r^{2}(\tau)\rangle=4D_{t}t^{\n}$
+where $D_{t}$ is the translational diffusion constant and $\n=1$. To measure the diffusive behavior, we fit a power law to the MSDs in Fig. 6(b). The resulting $n$ and $D_{t}$ are plotted in Fig. 6(c) and (d), respectively. These measurements quantitatively verify our observations of translational Brownian fluctuations in Fig. 6(a). For $J=0$, the translational motion of the particles is purely diffusive, as expected. As the incident flux increases, trapping forces is expected to scale with the gradient in the intensity electric field $\vec{E}%2=I(\vec{r}), 
+\begin{equation}
+\vec{F}\sim\nabla I(\vec{r})
+\end{equation}
+In the presence of any radial forces arising from gradients in incident field, the particle trajectories would become super-diffusive or ballistic. The resulting motion corresponds to the particle being guided to the minimum energy configuration at the center of the optical trap. As $J$ increases, we continue to observe constant values for $n$ while, indicating that the rotating particle's experience no trapping forces while in the presence of the torque field. Unexpectedly, we notice that the values for $D_{t}$ begin increase. We attribute this discrepancy to changes in the gravitational height $h_{g}$ caused by the incident
+radiation pressure (Fig. 3(c)). In particular, 
+\begin{equation}
+h_{g}=\frac{k_{B}T}{\Delta\rho\frac{4}{3}\pi r^{3}g-\frac{\alpha J\pi r^{2}}{c}}
+\end{equation}
+When the position of a moving particle with respect to a stationary surface changes, the flow field  is modified. This, in turn,  affects the particle's hydrodynamic drag. We correct for increasing $h_{g}$ by making use of  lubrication theory  (Citation goldman cox brenner, 1967 eq. 25, 2.59). In particular, for a sphere undergoing slow viscous motion parallel to the plane of the wall, the correction to the drag force at the lubrication limit is 
+\begin{equation}
+F_{\parallel}=6\pi\eta aF^{*}U$$
+$$F^{*}=\frac{8}{15}log\bigg(\frac{h_g}{a}\bigg)
+\end{equation}
+The solid lines in Fig. 6(d) show the corrected diffusion constant plotted for a 2$\mu m$ and 5 $\mu m$ particle, respectively. When accounting for the drag force correction, the observed increasing in $D_{t}$ is within the expected range.
+
+\section*{Conclusion}
+We have demonstrated a new system for optical micro-rotation of birefringent vaterite particles without the use of an optical tweezing configuration. The optical and physical properties of the constituent particles have also been characterized. In particular, we have experimentally measured the transmittance of microvaterite by analyzing the behavior of particles in the presence of IR light. In quantifying the minimum light ellipticity required for rotation, we obtain a measure of the difference between the ordinary and extraordinary axis of our microparticles. We find that this quantity deviates from the expected value of a single crystal, and differs from past studies where a different procedure was used for synthesis of microparticles. This same measurement allows us to also effectively model the dependence of particles' rotation on incident flux and size. Finally, we note that rotating particles maintain their translational diffusive motion in the presence of the incident beam, indicating that no radial trapping forces are present within our system.
+
+
+\bibliography{scibib}
+
+\bibliographystyle{Science}
+
+
+
+% Following is a new environment, {scilastnote}, that's defined in the
+% preamble and that allows authors to add a reference at the end of the
+% list that's not signaled in the text; such references are used in
+% *Science* for acknowledgments of funding, help, etc.
+
+%\begin{scilastnote}
+%\item We've included in the template file \texttt{scifile.tex} a new
+%environment, \texttt{\{scilastnote\}}, that generates a numbered final
+%citation without a corresponding signal in the text.  This environment
+%can be used to generate a final numbered reference containing
+%acknowledgments, sources of funding, and the like, per {\it Science\/}
+%style.
+%\end{scilastnote}
+
+
+
+
+% For your review copy (i.e., the file you initially send in for
+% evaluation), you can use the {figure} environment and the
+% \includegraphics command to stream your figures into the text, placing
+% all figures at the end.  For the final, revised manuscript for
+% acceptance and production, however, PostScript or other graphics
+% should not be streamed into your compliled file.  Instead, set
+% captions as simple paragraphs (with a \noindent tag), setting them
+% off from the rest of the text with a \clearpage as shown  below, and
+% submit figures as separate files according to the Art Department's
+% instructions.
+\clearpage
+\centerline{\includegraphics[scale=0.35]{/Users/alvinmodin/Desktop/manuscriptDraft/figure_1_2.png}}
+{ \textbf{ Figure 1: Rotational micro-manipulation with a collimated beam|} 
+\textbf{(a)} A schematic of the apparatus showing counterclockwise and \textbf{(b)} clockwise rotation of many birefrigent microparticles by circularly polarized light in the presence of a collimated laser source. \textbf{(c)} The phase shift experienced by circularly polarized light incident on birefringent microparticle acting as a half-wave plate.}
+
+\clearpage
+\centerline{\includegraphics[scale=0.6]{/Users/alvinmodin/Desktop/manuscriptDraft/figure2_2.png}}
+{ \textbf{ Figure 2: Synthesis procedure|} 
+\textbf{(a)} The chemical reactants (1) and the APTMS/TEOS coating pathway (2) that are used to create stable vaterite microsphers. \textbf{(b)} A typical broad-field SEM image with the size-distribution of a typical synthesis (inset). \textbf{(c)} A high-magnification SEM showing the surface of a coated vaterite particle.}
+
+\clearpage
+\begin{center}
+\includegraphics[scale=0.67]{/Users/alvinmodin/Desktop/manuscriptDraft/figure3_1.png}
+\end{center}
+{ \textbf{ Figure 3: Optical setup|} 
+\textbf{(a)} Detailed schematic for optical micro-manipulation of vaterite microparticles. Light propogates through a series of Galilean contractors that shrink the beam while preserving its collimation. After passing through a quarter-wave plate $\lambda/4$, the laser is incident on the sample plane.  \textbf{(b)} Measured intensity distribution $I(r)$ of laser illumination in the plane of the rotators' motion. The profile is obtained by fitting a 2-dimensional Gaussian distribution to the pixel intensities. \textbf{(c)} Variation of the graviational height of 3 and 5 $\mu m$ particles as a result of the incident radiation pressure from below the sample plane. }
+
+
+\clearpage
+\begin{center}
+\centerline{\includegraphics[scale=0.61]{/Users/alvinmodin/Desktop/manuscriptDraft/figure3_2.png}}
+\end{center}
+{ \textbf{ Figure 4: Optical properties of microvaterite|} \textbf{(a)} Determination of the birefringence of vaterite based on the minimum ellipticity required for rotation $\phi_{onset}$. \textbf{(b)} Measured rotational frequency varying as a function of the incident polarization $\phi$.  \textbf{(c)} Rise velocity as a result of radiation pressure. \textbf{(d)} Schematic of the experiment showing the translational forces that act on a microparticle in the presence of the beam. }
+
+\clearpage
+\begin{center}
+\includegraphics[scale=0.57]{/Users/alvinmodin/Desktop/manuscriptDraft/figure4_3.png}
+\end{center}
+{ \textbf{ Figure 5: Rotational dynamics and robustness|} 
+\textbf{(a)} Rotational diffusion constants obtained using dynamic light scattering. \textbf{(b)} Stills of a vaterite particle undergoing free translational and rotational diffusion under cross polarizers. \textbf{(c)}A typical autocorrelation measurement and corresponding fit to the dynamical rotational correlation function $f_{r}(\tau)$.\textbf{(d)} The rotation frequency increasing linearly as function of flux.\textbf{(e)} Rotational frequency shows a non-monotonic trend as particle size increases. \textbf{(f)} Periodic fluctuations for a vaterite particle actively rotating under a crossed analyzer/polarizer configuration. }
+\clearpage
+\begin{center}
+\includegraphics[scale=0.57]{/Users/alvinmodin/Desktop/manuscriptDraft/msdFigure5_2.png}
+\end{center}
+{ \textbf{ Figure 6: Translational dynamics of rotating microvaterite |} 
+\textbf{(a)} Traces showing the translational motion of particles at four different fluxes. \textbf{(b)} Plots of the averaged individual MSDs for varying $J$. \textbf{(c)}The power $n$ of the power law fit to the MSDs\textbf{(d)} Varying diffusion constants $D_{t}$ resulting from an increased $h_{g}$ due to the incident photon pressure.}
+
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
