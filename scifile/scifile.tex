@@ -1,0 +1,318 @@
+% Use only LaTeX2e, calling the article.cls class and 12-point type.
+
+\documentclass[12pt]{article}
+
+% Users of the {thebibliography} environment or BibTeX should use the
+% scicite.sty package, downloadable from *Science* at
+% www.sciencemag.org/about/authors/prep/TeX_help/ .
+% This package should properly format in-text
+% reference calls and reference-list numbers.
+
+\usepackage{scicite}
+
+% Use times if you have the font installed; otherwise, comment out the
+% following line.
+
+\usepackage{times}
+
+% The preamble here sets up a lot of new/revised commands and
+% environments.  It's annoying, but please do *not* try to strip these
+% out into a separate .sty file (which could lead to the loss of some
+% information when we convert the file to other formats).  Instead, keep
+% them in the preamble of your main LaTeX source file.
+
+
+% The following parameters seem to provide a reasonable page setup.
+
+\topmargin 0.0cm
+\oddsidemargin 0.2cm
+\textwidth 16cm 
+\textheight 21cm
+\footskip 1.0cm
+
+
+%The next command sets up an environment for the abstract to your paper.
+
+\newenvironment{sciabstract}{%
+\begin{quote} \bf}
+{\end{quote}}
+
+
+% If your reference list includes text notes as well as references,
+% include the following line; otherwise, comment it out.
+
+\renewcommand\refname{References and Notes}
+
+% The following lines set up an environment for the last note in the
+% reference list, which commonly includes acknowledgments of funding,
+% help, etc.  It's intended for users of BibTeX or the {thebibliography}
+% environment.  Users who are hand-coding their references at the end
+% using a list environment such as {enumerate} can simply add another
+% item at the end, and it will be numbered automatically.
+
+\newcounter{lastnote}
+\newenvironment{scilastnote}{%
+\setcounter{lastnote}{\value{enumiv}}%
+\addtocounter{lastnote}{+1}%
+\begin{list}%
+{\arabic{lastnote}.}
+{\setlength{\leftmargin}{.22in}}
+{\setlength{\labelsep}{.5em}}}
+{\end{list}}
+
+
+% Include your paper's title here
+
+\title{ Defocused optical rotation of birefrignent microparticles    } 
+
+
+% Place the author information here.  Please hand-code the contact
+% information and notecalls; do *not* use \footnote commands.  Let the
+% author contact information appear immediately below the author names
+% as shown.  We would also prefer that you don't change the type-size
+% settings shown here.
+
+\author
+{Alvin S. Modin,$^{1\ast}$ Matan Yah Ben Zion,$^{1}$ Melissa Ferrari,$^{1}$ \\ Mark D Hannel , $^{1}$ Paul M. Chaikin, $^{1}$\\
+\\
+\normalsize{$^{1}$Department of Physics, New York University,}\\
+\normalsize{726 Broadway, New York, NY 10003, USA}\\
+\\
+\normalsize{$^\ast$To whom correspondence should be addressed; E-mail:  alvin.modin@nyu.edu.}
+}
+
+% Include the date command, but leave its argument blank.
+
+\date{}
+
+
+
+%%%%%%%%%%%%%%%%% END OF PREAMBLE %%%%%%%%%%%%%%%%
+
+
+
+\begin{document} 
+
+% Double-space the manuscript.
+
+\baselineskip24pt
+
+% Make the title.
+
+\maketitle 
+
+
+
+% Place your abstract within the special {sciabstract} environment.
+
+\begin{sciabstract}
+Optical angular momentum can be transferred to a particle, resulting in a torque that leads to the particle's rotation. In the past, optical tweezers have been used to rotate individual colloids, trapping them to the narrow waist of a focused laser. We show that a defocused, circularly-polarized beam can induce stable rotation in hundreds of colloidal micro-particles simultaneously. This is done by developing a process for synthesizing stable birefringent vaterite, capable of rotating for long periods of time while experiencing minimal tweezing forces. Altering the handedness and intensity of the laser source allows us to control the frequency and switch between clockwise or counterclockwise rotation. We discuss the optical and physical properties of the rotating particles.
+\end{sciabstract}
+
+
+
+% In setting up this template for *Science* papers, we've used both
+% the \section* command and the \paragraph* command for topical
+% divisions.  Which you use will of course depend on the type of paper
+% you're writing.  Review Articles tend to have displayed headings, for
+% which \section* is more appropriate; Research Articles, when they have
+% formal topical divisions at all, tend to signal them with bold text
+% that runs into the paragraph, for which \paragraph* is the right
+% choice.  Either way, use the asterisk (*) modifier, as shown, to
+% suppress numbering.
+
+\section*{Introduction}
+\hspace{15pt}Rotating colloids exhibit remarkably diverse behavior reminiscent of the locomotion of waltzing algae (CITATION), and of gears that power a bacterium’s flagella (CITATION). When submersed in a fluid, the hydrodynamic forces between micro-rotators can exert attractive and repulsive interactions of varying range. As such, the directed manipulation of colloidal particles by external fields is of particular interest in the study of dynamic self-assembly, microrheology, and the development of new synthetic, steerable colloids (CITATIONS). 
+
+Traditionally, torques over particulate matter have been exerted by magnets (CITATIONS). When a magnetic colloid is introduced to a time-dependent magnetic field, it will realign so that its moment lies parallel to the field. Consequently, such particles undergo physical motion and experience viscous resistance when they are suspended in a liquid. Magnetic fields present unique advantages in that (a) the frequency and direction of the torque field set the angular velocity of the particle and (b) they are easy to integrate and model due to their unscreened nature in electrolyte solution. Yet, the homogeneity of a magnetic torque field restricts the rotation direction - particles can be rotated exclusively in one direction, either clockwise or counterclockwise.  The aim of this report is to introduce an alternative torque field capable of rotating hundreds of colloidal micro-particles.
+
+By harnessing the spin angular momentum of circularly polarized light, various laser configurations have succeeded in applying torques to optically trapped particles. Such optical micro-manipulation has beed achieved using birefringent dielectric particles (CITATION), which are capable of inducing a phase retardation between the ordinary and extraordinary components of the beam. The result is a change in the angular momentum of the transmitted light, corresponding to a torque and rotation of the particle. 
+
+At present, optical torque fields have rotated particles at the focal point of a highly converging beam. This converging beam geometry applies a strong radial, "tweezing" force (CITATION) that keeps the particle pivoting at a fixed point. As a result, the dynamics of the rotating particle are dictated by the beam, and do not reciprocate from the surroundings. Furthermore, the narrow waist of the focused beam limits the the number of particles that can be rotated to no more than a handful. 
+
+Here we report a tailored optical system capable of inducing stable rotation in hundreds of birefringent micro-particles simultaneously. Using a broad, defocused Gaussian beam, we are able to rotate particles with minimal trapping forces. Altering the handedness and intensity of the laser source allows us to control the frequency and switch between clockwise or counterclockwise rotation. We demonstrate a protocol for synthesis of stable vaterite particles that can rotate for long periods of times. We characterize their optical and physical properties through experiments. By measuring their transmittance and birefringence, we establish a dependance of rotation frequency on various parameters, such as particle size, energy flux and drag force. Our study offers a new degree of freedom on rotational optical micro-manipulation that can be combined in tandem with magnetic torque fields.
+ 	
+
+
+
+\section*{Materials and Methods}
+\subsection*{Synthesis of Vaterite Microspheres}
+\hspace{15pt}We synthesize microvaterite particles via controlled precipitation of highly concentrated solutions of calcium chloride CaCl2 and sodium carbonate Na2Co3 (cite, x,y,z). These solutions are buffered to a pH of 9-9.5 by CHES. Initially, equal volumes (5mL) of 0.33 M Na2Co3 and CaCl2 are mixed in a glass vial containing a 1cm magnetic stir-bar, rotating at ~950rpm. This sample is referred to as the synthesis bath. Under these conditions, a typical yield contains thousands of particles with a mean size of 3.6 um ± 0.8 um (Fig #). Tuning the final diameter of the synthesis bath can be achieved by varying the stirring speed, initial reactant concentration, and reaction time (volodkin et. al). 
+
+A typical issue encountered when resuspending vaterite microspheres in solvent is their sensitivity to pH. Vaterite is a metastable polymorph of calcium carbonate, preserving its phase exclusively in basic conditions. Deviations towards even weakly acidic conditions cause rapid dissolution and transformation of vaterite spheres to calcite cubes (SI video #). So that we could promote phase stability and limit flocculation, we choose to coat particles first with (3- Aminopropyl)trimethoxysilane (APS) and tetraethyl orthosilicate (TEOS.) In a typical APS coating, 1.5mL of the synthesis bath is washed in DI H20 3 times, to which 70uL of APS (Aldrich), 25uL of Ammonia (25\% V/V in H20, Merck) and 940uL of ethanol (200 proof) are added. The sample is then placed in a shaker for 2.5 hours. For TEOS, the procedure is identical, except the sample is allowed to shake for 5 hours (cite Vogel). 
+
+Scanning electron microscopy (SEM) images at various points of the synthesis process show a polycrystalline amalgamation of nanocrystal combining to form a spheroidal microvaterite particle(Figure ). Previously, it has been shown that direction of the optical axis resulting from these nanocrystalline subunits is oriented in a hyperbolic distribution throughout the formed microvaterite crystal. This suggests that an effective optical anisotropy exists at the particle scale. (Parkin et al . 2009 optics express).
+\subsection*{Optical setup}
+Our instrument is designed to apply a uniform optical torque field via delivery of a collimated beam to the sample plane. A schematic diagram of the setup can be seen in Figure (INSERT). The experimental system consists of a 3mm infrared (IR) laser, $\lambda=1064$nm (IPG Photonics, $M^{2}=1$), propagating first through a half wave plate ($\lambda/2$) followed by a Galilean beam contractor. The contractor is capable of shrink the beam by a factor of 30, while presuming the collimation of the laser source . Once the beam diameter has been reduced, it propagates through a polarizing beam splitter (PBS) cube where the S-component of light is reflected upwards. The handedness of the linearly polarized light can be altered via a quarter wave plate ($\lambda/4$) fixed immediately after the PBS atop a precision manual rotation mount. 
+
+The near-infrared light can be imaged using an infrared viewing card. The pixel intensities can be fit to a Gaussian surface of revolution to obtain an intensity distribution of the beam at the sample plane. Figure(INSERT) shows the intensity distribution $I(r)$ with FWHM=$120\mu m$. To compensate for any divergence that may result from minimizing the beam diameter, we use a large,15 cm focal length biconvex lens. The compensating lens sits within a non-rotating zoom housing, which allows for fine tuning of the beam diameter. Thus, we may adjust the flux at the sample either by changing the size of the incoming beam, or alternatively the power at the laser head. 
+
+To image our microspheres, we illuminate the sample using a 505 nm LED (Thorlabs) mounted on an x-y translation mount. The light emitted by the LED passes through a N-BK7 ground glass diffuser (600 grit), and is then pseudo-collimated with an N-BK7 plano-convex lens (f=25.4mm) that acts as a primary collector lens. After a secondary achromatic doublet lens (f=76.2mm) forms an image of the filament at the position of a field diaphragm. A condenser lens is used to focus the light at the back focal plane of the objective. Once Köhler illumination is achieved, the images in Figure (INSERT) are obtained using an infinity corrected Leica HCX PL APO 40x objective (NA=0.85). High-pass index matched IR filters mounted before the camera are used to prevent interference of IR light with the 3.1MP monochrome camera (Imaging Source). 
+
+
+\section*{Results}
+
+\subsection*{Calculation of transmittance of incident infrared light}
+
+\paragraph*{In-line math.}  The utility that we use for converting
+from \LaTeX\ to HTML handles in-line math relatively well.  It is best
+to avoid using built-up fractions in in-line equations, and going for
+the more boring ``slash'' presentation whenever possible --- that is,
+for \verb+$a/b$+ (which comes out as $a/b$) rather than
+\verb+$\frac{a}{b}$+ (which compiles as $\frac{a}{b}$).  Likewise,
+HTML isn't tooled to handle certain overaccented special characters
+in-line; for $\hat{\alpha}$ (coded \verb+$\hat{\alpha}$+), for
+example, the HTML translation code will return [\^{}$(\alpha)$].
+Don't drive yourself crazy --- but if it's possible to avoid such
+constructs, please do so.  Please do not code arrays or matrices as
+in-line math; display them instead.  And please keep your coding as
+\TeX-y as possible --- avoid using specialized math macro packages
+like \texttt{amstex.sty}.
+
+\paragraph*{Displayed math.} Our HTML converter sets up \TeX\
+displayed equations using nested HTML tables.  That works well for an
+HTML presentation, but Word chokes when it comes across a nested
+table in an HTML file.  We surmount that problem by simply cutting the
+displayed equations out of the HTML before it's imported into Word,
+and then replacing them in the Word document using either images or
+equations generated by a Word equation editor.  Strictly speaking,
+this procedure doesn't bear on how you should prepare your manuscript
+--- although, for reasons best consigned to a note \cite{nattex}, we'd
+prefer that you use native \TeX\ commands within displayed-math
+environments, rather than \LaTeX\ sub-environments.
+
+\paragraph*{Tables.}  The HTML converter that we use seems to handle
+reasonably well simple tables generated using the \LaTeX\
+\texttt{\{tabular\}} environment.  For very complicated tables, you
+may want to consider generating them in a word processing program and
+including them as a separate file.
+
+\paragraph*{Figures.}  Figure callouts within the text should not be
+in the form of \LaTeX\ references, but should simply be typed in ---
+that is, \verb+(Fig. 1)+ rather than \verb+\ref{fig1}+.  For the
+figures themselves, treatment can differ depending on whether the
+manuscript is an initial submission or a final revision for acceptance
+and publication.  For an initial submission and review copy, you can
+use the \LaTeX\ \verb+{figure}+ environment and the
+\verb+\includegraphics+ command to include your PostScript figures at
+the end of the compiled PostScript file.  For the final revision,
+however, the \verb+{figure}+ environment should {\it not\/} be used;
+instead, the figure captions themselves should be typed in as regular
+text at the end of the source file (an example is included here), and
+the figures should be uploaded separately according to the Art
+Department's instructions.
+
+
+\section*{What to Send In}
+
+What you should send to {\it Science\/} will depend on the stage your manuscript is in:
+
+\begin{itemize}
+\item {\bf Important:} If you're sending in the initial submission of
+  your manuscript (that is, the copy for evaluation and peer review),
+  please send in {\it only\/} a PostScript or PDF version of the
+  compiled file (including figures).  Please do not send in the \TeX\ 
+  source, \texttt{.sty}, \texttt{.bbl}, or other associated files with
+  your initial submission.  (For more information, please see the
+  instructions at our Web submission site,
+  http://www.submit2science.org/ .)
+\item When the time comes for you to send in your revised final
+  manuscript (i.e., after peer review), we require that you include
+  all source files and generated files in your upload.  Thus, if the
+  name of your main source document is \texttt{ltxfile.tex}, you
+  need to include:
+\begin{itemize}
+\item \texttt{ltxfile.tex}.
+\item \texttt{ltxfile.aux}, the auxilliary file generated by the
+  compilation.
+\item A PostScript file (compiled using \texttt{dvips} or some other
+  driver) of the \texttt{.dvi} file generated from
+  \texttt{ltxfile.tex}, or a PDF file distilled from that
+  PostScript.  You do not need to include the actual \texttt{.dvi}
+  file in your upload.
+\item From B{\small{IB}}\TeX\ users, your bibliography (\texttt{.bib})
+  file, {\it and\/} the generated file \texttt{ltxfile.bbl} created
+  when you run B{\small{IB}}\TeX.
+\item Any additional \texttt{.sty} and \texttt{.bst} files called by
+  the source code (though, for reasons noted earlier, we {\it
+    strongly\/} discourage the use of such files beyond those
+  mentioned in this document).
+\end{itemize}
+\end{itemize}
+
+% Your references go at the end of the main text, and before the
+% figures.  For this document we've used BibTeX, the .bib file
+% scibib.bib, and the .bst file Science.bst.  The package scicite.sty
+% was included to format the reference numbers according to *Science*
+% style.
+
+
+\bibliography{scibib}
+
+\bibliographystyle{Science}
+
+
+
+% Following is a new environment, {scilastnote}, that's defined in the
+% preamble and that allows authors to add a reference at the end of the
+% list that's not signaled in the text; such references are used in
+% *Science* for acknowledgments of funding, help, etc.
+
+\begin{scilastnote}
+\item We've included in the template file \texttt{scifile.tex} a new
+environment, \texttt{\{scilastnote\}}, that generates a numbered final
+citation without a corresponding signal in the text.  This environment
+can be used to generate a final numbered reference containing
+acknowledgments, sources of funding, and the like, per {\it Science\/}
+style.
+\end{scilastnote}
+
+
+
+
+% For your review copy (i.e., the file you initially send in for
+% evaluation), you can use the {figure} environment and the
+% \includegraphics command to stream your figures into the text, placing
+% all figures at the end.  For the final, revised manuscript for
+% acceptance and production, however, PostScript or other graphics
+% should not be streamed into your compliled file.  Instead, set
+% captions as simple paragraphs (with a \noindent tag), setting them
+% off from the rest of the text with a \clearpage as shown  below, and
+% submit figures as separate files according to the Art Department's
+% instructions.
+
+
+\clearpage
+
+\noindent {\bf Fig. 1.} Please do not use figure environments to set
+up your figures in the final (post-peer-review) draft, do not include graphics in your
+source code, and do not cite figures in the text using \LaTeX\
+\verb+\ref+ commands.  Instead, simply refer to the figure numbers in
+the text per {\it Science\/} style, and include the list of captions at
+the end of the document, coded as ordinary paragraphs as shown in the
+\texttt{scifile.tex} template file.  Your actual figure files should
+be submitted separately.
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
